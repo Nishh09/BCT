@@ -83,4 +83,33 @@ contract StudentData {
     }
 }
 
+//Fibonacci Numbers...
+class Fibonacci {
+    public static int nonrecfibo(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        int a = 0, b = 1;
+        int result = 0;
+        for (int i = 2; i <= n; i++) {
+            result = a + b;
+            a = b;
+            b = result;
+        }
+        return result;
+    }
 
+    public static int recfibo(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return recfibo(n - 1) + recfibo(n - 2);
+    }
+
+    public static void main(String[] args) {
+        int result = nonrecfibo(5);
+        int result1 = recfibo(6);
+        System.out.println("The fibonacci value is " + result);
+        System.out.println("The fibonacci value is " + result1);
+    }
+}
